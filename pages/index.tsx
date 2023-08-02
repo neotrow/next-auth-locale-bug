@@ -1,6 +1,8 @@
-import Layout from "../components/layout"
+import { useRouter } from "next/router";
+import Layout from "../components/layout";
 
 export default function IndexPage() {
+  const { locale, defaultLocale } = useRouter();
   return (
     <Layout>
       <h1>NextAuth.js Example</h1>
@@ -8,6 +10,9 @@ export default function IndexPage() {
         This is an example site to demonstrate how to use{" "}
         <a href="https://next-auth.js.org">NextAuth.js</a> for authentication.
       </p>
+      <p>
+        locale is {locale} and defaultLocale is {defaultLocale}
+      </p>
     </Layout>
-  )
+  );
 }
